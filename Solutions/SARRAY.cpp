@@ -2,20 +2,17 @@
 using namespace std;
 
 
-typedef long long ll;
-typedef pair <ll, ll> pll;
+typedef int ll;
 #define mxx 100005
 char T[mxx];
 ll RA[mxx], tempRA[mxx];
 ll SA[mxx], tempSA[mxx];
 ll c[mxx],n;
 ll Phi[mxx];
-ll PLCP[mxx];
-ll LCP[mxx];
 
 void countingSort(ll k)
 {
-    ll i, sum, maxi = max(300ll, n);
+    ll i, sum, maxi = max(300, n);
     memset(c, 0, sizeof c);
     for (i = 0; i < n; i++)
         c[i + k < n ? RA[i + k] : 0]++;
@@ -55,11 +52,11 @@ void constructSA()
 
 int main()
 {
-    cin>>T;
+    scanf("%s",T);
     n=strlen(T);
     T[n++]='$';
     constructSA();
-    for(ll i=1;i<n;i++)cout<<SA[i]<<endl;
+    for(ll i=1;i<n;i++)printf("%d\n",SA[i]);
 
 
 }
